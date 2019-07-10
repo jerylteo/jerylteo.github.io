@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Portfolio Webpage featuring Jeryl Teo">
+    <meta name="author" content="Jeryl Teo">
     <title>Jeryl Teo</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
@@ -11,64 +13,107 @@
 </head>
 <body>
     <header>
-        <div class="leftNav">
-            <a href="#">JERYL TEO</a>
-            Cyber Security ● Digital Media ● Programming ● Photography
+        <div class="container">
+            <div id="leftNav">
+                <a href="#" id="highlight">JERYL TEO</a>
+                <p>Cyber Security ● Digital Media ● Programming ● Photography</p>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Portfolio</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <ul class="rightNav">
-            <li>Portfolio</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
+        
     </header>
-    <main>
-        <div id="mainDot">
-            <img src="images/IMG_0416-2.jpg.png" alt="mainImg" id="mainImg">
+    <section id="showcase">
+        <div id="cont">
+            <div id="showcaseText">
+                <h1>Full Stack Web Developer <br>
+                    Cyber Security Analyst <br>
+                    Photographer <br>
+                </h1>
+                <a href="index.html">View Portfolio</a>
+            </div>  
+            <img src="images/showcase.png" alt="mainImg" id="mainImg">
         </div>
-        <div class="mainInfo">
-            <p>Web Developer</p>
-            <p>Programmer</p>
-            <p>Photographer</p>
-            <a href="#" id="viewBtn">View Portfolio</a>
-        </div>
-    </main>
-    <article class="aboutMe">
-        <img src="images/JT0_1679.jpg" alt="aboutImg" id="aboutImg">
-        <div class="aboutdesc">
-            <p>Student</p>
-            <p>Nanyang Polytechnic</p>
-            <p>Web Developer & Avid Phtoographer</p>
-            <p>Diploma in Multimedia & Infocomm Technology</p>
-        </div>
-    </article>
-    <article class="gallery">
-        <div class="images">
-            <div>
-                <img src="images/DSC04883.JPG" alt="camFocus" class="galleryImg">
+    </section>
+    <section id="aboutMe">
+        <div class="container">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                            <img src="images/JT0_1679.jpg" alt="aboutImg" id="aboutImg">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>INFINITY</h2>
+                        <p>National Gallery Singapore</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <img src="images/sulynncandid.jpg" alt="sulynnCandid" class="galleryImg">
-            </div>
-            <div>
-                <img src="images/JT0_2110.jpg" alt="xd" class="galleryImg">
-            </div>
-            <div>
-                <img src="images/IMG_20190321_131222_272.jpg" alt="whiteyellow" class="galleryImg">
+            <div id="aboutdesc">
+                <h1>Student</h1>
+                <h2>Nanyang Polytechnic</h2>
+                <h3>Web Developer & Avid Photographer</h3>
+                <h4>Diploma in Multimedia & Infocomm Technology</h4>
             </div>
         </div>
-    </article>
+        
+    </section>
+    <section id="gallery">
+        <h1>- PHOTO GALLERY -</h1>
+        <div class="container">
+            <div class="wrapper">
+                <div class="box">
+                    <img src="images/JT0_1802.jpg" alt="camFocus" class="galleryImg">
+                    <div class="overlay">
+                        <p>Feat. Tseng Wee<br>
+                            National Gallery Singapore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <img src="images/sulynncandid.jpg" alt="sulynnCandid" class="galleryImg">
+                    <div class="overlay">
+                        <p>Feat. Sulynn<br>
+                            National Gallery Singapore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <img src="images/JT0_2087.jpg" alt="glenn" class="galleryImg">
+                    <div class="overlay">
+                        <p>Feat. Glenn<br>
+                            National Gallery Singapore</p>
+                     </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="box">
+                    <img src="images/JT0_1830.jpg" alt="tsengwee" class="galleryImg">
+                    <div class="overlay">
+                        <p>Feat. Tseng Wee<br>
+                            National Gallery Singapore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <h1><a href="index.html">View More</a></h1>
+            </div>
+        </div>
+    </section>
     <footer>
-        <div class="left">
+        <!-- <div class="left">
             <a href="#">Portfolio</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
-        </div>
+        </div> -->
         <div class="mid">
-            <p>Jeryl Teo</p>
-            <p>&copy; Copyright 2019</p>
-        </div>
-        <div class="right">
-
+            <p>Jeryl Teo &copy; Copyright 2019</p>
         </div>
     </footer>
 </body>
