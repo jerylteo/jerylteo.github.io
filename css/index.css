@@ -1,57 +1,44 @@
-body {
+/* Global */
+* {
     padding: 0;
     margin: 0;
-    font: 15px/1.5 'Montserrat', Arial, sans-serif;
-    background-color: #f4f4f4;
 }
-img {
-    width: 400px;
-}
-
-/* Global */
+html {font-family: 'Montserrat'; font-size: 10px; background-color: #f4f4f4;}
 .container {
     width: 80%;
     margin: auto;
-    overflow: hidden;
 }
-ul {
-    margin: 0;
-    padding: 0;
-}
-a {
-    text-decoration: none;
-}
-
+h1 {font-size: 3.6rem;}
+li {list-style-type: none;}
+a {text-decoration: none; font-size: 1.6rem;}
+p, a, span {font-size: 1.6rem; line-height: 2.4rem;}
+img {width: 40rem;}
 /* Header */
 header {
     background: #35424a;
-    padding-top: 2rem;
-    min-height: 4rem;
+    padding: 3rem 0;
 }
-header a {
+header a, header p {
     color: #ffffff;
     text-transform: uppercase;
 }
-header li {
-    float: left;
-    display: inline;
-    padding: 0 20px 0 0;
-}
-header #leftNav {
-    float: left;
+.container {
     display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.1rem;
 }
-header #leftNav p {
-    margin: auto;
-    padding-left: 40px;
-    color: #ffffff;
-    font-size: 12px;
+.container nav, .container nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-header nav {
-    float: right;
+.container a {font-size: 1.6rem;}
+.container #leftNav p, .container nav ul li {
+    padding: 0 2rem; 
+    font-size: 1.2rem; 
 }
-
-header .current a, header #highlight {
+.container nav ul li:not(:last-child) {border-right: 1px solid rgba(255, 255, 255, 0.25);}
+.container #current a, .container #highlight {
     color: #e8491d;
     font-weight: bold;
 }
