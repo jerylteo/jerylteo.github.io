@@ -1,56 +1,135 @@
 Vue.component('app-landing', {
     template:
     `
-    <section style="height: 100vh; width: 99vw;">
-        <header>
-            <div>
-                <h3>JERYL TEO</h3>
-                <p>Portfolio</p>
+    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage">
+        <header class="row mt-5 mt-sm-0">
+            <div class="col-md-3 col-12 d-md-block d-flex align-items-center justify-content-center mb-3 mb-md-0" @click.prevent="router.push('/');" style="cursor: pointer;">
+                <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
+                <p class="mb-0">Portfolio</p>
             </div>
-            <div>
-                <h5 class="light">Full Stack Web Developer</h5>
-                <h5 class="light">Swimming Instructor</h5>
-                <h5 class="light">Photographer</h5>
+            <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
+                <h5 class="light mb-0">Full Stack Web Developer</h5>
+                <span style="font-size: 4rem;" class="mb-2">·</span>
+                <h5 class="light mb-0">Swimming Instructor</h5>
+                <span style="font-size: 4rem;" class="mb-2">·</span>
+                <h5 class="light mb-0">Photographer</h5>
             </div>
         </header>
-        <article class="container-fluid">
-            <div class="row">
-                <div class="col-2">
-                    <h5>Develop Websites</h5>
-                    <h5>Learn Swimming</h5>
-                </div>
-                <div class="col-8">
-                    <div class="landingCon">
-                        <div class="landingImg">
-                            <img src="/images/hero.png" alt="hero" class="img-fluid">
+        <article class="row flex-grow-1 mb-5 landingContent">
+            <div class="col-12 h-100 d-flex flex-column align-items-center">
+                <div class="row h-100 w-100">
+                    <div class="col-3 d-flex flex-column align-items-center justify-content-around">
+                        <h5 @mouseover="state='landing'" class="lrotate text-nowrap" id="landing">The Hub</h5>
+                        <h5 @mouseover="state='website'" class="lrotate text-nowrap" id="website">Develop Websites</h5>
+                    </div>
+                    <div class="col-6 d-flex align-items-center justify-content-center">
+                        <div class="landingCon">
+                            <div class="landingImg" style="overflow: hidden;">
+                                <img id="landimg" src="/images/hero.png" alt="landing" class="img-fluid">
+                                <img id="photimg" src="/images/gal2.jpg" alt="photography" class="img-fluid">
+                                <img id="swimimg" src="/images/swim.jpg" alt="swimming" class="img-fluid">
+                                <img id="webimg" src="/images/website.png" alt="swimming" class="img-fluid">
+                                <h1 class="d-none d-sm-block in" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
+                                <h1 class="d-none d-sm-block in" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
+                            </div>
+                            <h1 class="d-none d-sm-block" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
+                            <h1 class="d-none d-sm-block" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
                         </div>
-                        <h1 id="heroT">LANDING</h1>
-                        <h1 id="heroB">PAGE</h1>
+                    </div>
+                    <div class="col-3 d-flex flex-column align-items-center justify-content-around">
+                        <h5 @mouseover="state='swimming'" class="rrotate text-nowrap" id="swimming">Learn Swimming</h5>
+                        <h5 @mouseover="state='photography'" class="rrotate text-nowrap" id="photography">Get Photographed</h5>
                     </div>
                 </div>
-                <div class="col-2">
-                    <h5>Get Photographed</h5>
-                    <h5>Get Photographed</h5>
+                <div class="row w-sm-75 w-100">
+                    <div class="col-12 d-flex align-items-end justify-content-between justify-content-sm-around">
+                        <h5 @mouseover="state='about'" class="scale">About Me</h5>
+                        <h5 @mouseover="state='contact'" class="scale">Contact Me</h5>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <h5>About Me</h5>
-                    <h5>Contact Me</h5>
-                </div>
-            </div>
+
         </article>
     </section>
     `,
     data() {
         return {
-
+            heroT: "THE",
+            heroB: "HUB",
+            state: "",
+        }
+    },
+    watch: {
+        state() {
+            this.animation();
         }
     },
     methods: {
+        animation() {
+            switch(this.state) {
+                case "landing":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', 'white');
+                    $('.in').css('color', '#41444b')
+                    this.heroT = "THE";
+                    this.heroB = "HUB";
+                    $('.landingImg img').css('opacity', 0);
+                    $('#landimg').css('opacity', 1);
+                    break;
+                case "photography":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', '#8db596');
+                    $('.in').css('color', 'white')
+                    this.heroT = "TAKE";
+                    this.heroB = "PICTURES";
+                    $('.landingImg img').css('opacity', '0');
+                    $('#photimg').css('opacity', 1);
+                    break;
+                case "swimming":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', '#28abb9');
+                    $('.in').css('color', 'white')
+                    this.heroT = "LEARN";
+                    this.heroB = "SWIMMING";
+                    $('.landingImg img').css('opacity', '0');
+                    $('#swimimg').css('opacity', 1);
+                    break;
+                case "website":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', '#ffc7c7');
+                    $('.in').css('color', '#41444b')
+                    this.heroT = "DEVELOP";
+                    this.heroB = "WEBSITES";
+                    $('.landingImg img').css('opacity', '0');
+                    $('#webimg').css('opacity', 1);
+                    break;
+                case "about":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', 'white');
+                    $('.in').css('color', '#41444b')
+                    this.heroT = "ABOUT";
+                    this.heroB = "ME";
+                    $('.landingImg img').css('opacity', 0);
+                    $('#landimg').css('opacity', 1);
+                    break;
+                case "contact":
+                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
+                    $('.landingCon h1').css('color', 'white');
+                    $('.in').css('color', '#41444b')                    
+                    this.heroT = "CONTACT";
+                    this.heroB = "ME";
+                    $('.landingImg img').css('opacity', 0);
+                    $('#landimg').css('opacity', 1);
+                    break;
 
+            }
+        },
+        removeAnim() {
+            $('.landingCon h1').removeClass('animate__animated animate__fadeOutRight');
+            $('.landingCon h1').addClass('animate__animated animate__fadeInLeft');
+        },
     },
     mounted() {
-        console.log('hi');
+        this.state = "landing";
     }
 })
