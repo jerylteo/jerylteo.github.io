@@ -11,8 +11,8 @@ Vue.component('app-landing', {
                 <div class="d-md-block d-flex align-items-center justify-content-center mt-3">
                     <a class="text-light" href="https://www.facebook.com/jerylteoSI"><i class="fab fa-facebook fa-2x"></i></a>
                     <a href="https://www.instagram.com/jerylteo.si/" class="text-light"><i class="fab fa-instagram fa-2x mx-3"></i></a>
-                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"></a><i class="fab fa-linkedin-in fa-2x"></i>
-                    <a href="http://be.net/jerylteo" class="text-light ml-3"></a><i class="fab fa-behance fa-2x"></i>
+                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"><i class="fab fa-linkedin-in fa-2x"></i></a>
+                    <a href="http://be.net/jerylteo" class="text-light ml-3"><i class="fab fa-behance fa-2x"></i></a>
                 </div>
             </div>
             <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
