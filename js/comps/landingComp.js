@@ -9,10 +9,10 @@ Vue.component('app-landing', {
                     <p class="mb-0">Portfolio</p>
                 </div>
                 <div class="d-md-block d-flex align-items-center justify-content-center mt-3">
-                    <a class="text-light" href="https://www.facebook.com/jerylteoSI"><i class="fab fa-facebook fa-3x"></i></a>
-                    <a href="https://www.instagram.com/jerylteo.si/" class="text-light"><i class="fab fa-instagram fa-3x mx-3"></i></a>
-                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"></a><i class="fab fa-linkedin-in fa-3x"></i>
-                    <a href="http://be.net/jerylteo" class="text-light ml-3"></a><i class="fab fa-behance fa-3x"></i>
+                    <a class="text-light" href="https://www.facebook.com/jerylteoSI"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.instagram.com/jerylteo.si/" class="text-light"><i class="fab fa-instagram fa-2x mx-3"></i></a>
+                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"></a><i class="fab fa-linkedin-in fa-2x"></i>
+                    <a href="http://be.net/jerylteo" class="text-light ml-3"></a><i class="fab fa-behance fa-2x"></i>
                 </div>
             </div>
             <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
@@ -43,7 +43,7 @@ Vue.component('app-landing', {
                             </div>
                             <h1 class="d-none d-sm-block" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
                             <h1 class="d-none d-sm-block" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
-                            <p class="text-muted text-center mt-4 d-none d-md-block">Hover over any of the links!</p>
+                            <p style="font-size: 1rem;" class="text-muted font-weight-light text-center mt-4 d-none d-md-block">Hover over any of the links!</p>
                         </div>
                     </div>
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">
