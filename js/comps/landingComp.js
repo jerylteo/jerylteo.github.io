@@ -3,8 +3,8 @@ Vue.component('app-landing', {
     `
     <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage">
         <header class="row mt-5 mt-sm-0">
-            <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" @click.prevent="router.push('/');" style="cursor: pointer;">
-                <div class="d-md-block d-flex align-items-center justify-content-center ">
+            <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" style="cursor: pointer;">
+                <div class="d-md-block d-flex align-items-center justify-content-center" @click.prevent="router.push('/');" >
                     <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
                     <p class="mb-0">Portfolio</p>
                 </div>
