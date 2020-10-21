@@ -3,9 +3,17 @@ Vue.component('app-landing', {
     `
     <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage">
         <header class="row mt-5 mt-sm-0">
-            <div class="col-md-3 col-12 d-md-block d-flex align-items-center justify-content-center mb-3 mb-md-0" @click.prevent="router.push('/');" style="cursor: pointer;">
-                <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
-                <p class="mb-0">Portfolio</p>
+            <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" @click.prevent="router.push('/');" style="cursor: pointer;">
+                <div class="d-md-block d-flex align-items-center justify-content-center ">
+                    <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
+                    <p class="mb-0">Portfolio</p>
+                </div>
+                <div class="d-md-block d-flex align-items-center justify-content-center mt-3">
+                    <a class="text-light" href="https://www.facebook.com/jerylteoSI"><i class="fab fa-facebook fa-3x"></i></a>
+                    <a href="https://www.instagram.com/jerylteo.si/" class="text-light"><i class="fab fa-instagram fa-3x mx-3"></i></a>
+                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"></a><i class="fab fa-linkedin-in fa-3x"></i>
+                    <a href="http://be.net/jerylteo" class="text-light ml-3"></a><i class="fab fa-behance fa-3x"></i>
+                </div>
             </div>
             <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
                 <h5 class="light mb-0">Full Stack Web Developer</h5>
@@ -16,6 +24,7 @@ Vue.component('app-landing', {
             </div>
         </header>
         <article class="row flex-grow-1 mb-5 landingContent">
+
             <div class="col-12 h-100 d-flex flex-column align-items-center">
                 <div class="row h-100 w-100">
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">
@@ -34,6 +43,7 @@ Vue.component('app-landing', {
                             </div>
                             <h1 class="d-none d-sm-block" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
                             <h1 class="d-none d-sm-block" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
+                            <p class="text-muted text-center mt-4 d-none d-md-block">Hover over any of the links!</p>
                         </div>
                     </div>
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">
@@ -68,17 +78,19 @@ Vue.component('app-landing', {
         animation() {
             switch(this.state) {
                 case "landing":
+                    $('body').css('background-color', '#1e2022');
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
                     $('.landingCon h1').css('color', 'white');
-                    $('.in').css('color', '#41444b')
+                    $('.in').css('color', '#41444b');
                     this.heroT = "THE";
                     this.heroB = "HUB";
                     $('.landingImg img').css('opacity', 0);
                     $('#landimg').css('opacity', 1);
                     break;
                 case "photography":
+                    $('body').css('background-color', '#2b2b28');
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', '#8db596');
+                    $('.landingCon h1').css('color', '#94d3ac');
                     $('.in').css('color', 'white')
                     this.heroT = "TAKE";
                     this.heroB = "PICTURES";
@@ -86,6 +98,7 @@ Vue.component('app-landing', {
                     $('#photimg').css('opacity', 1);
                     break;
                 case "swimming":
+                    $('body').css('background-color', '#222831')
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
                     $('.landingCon h1').css('color', '#28abb9');
                     $('.in').css('color', 'white')
@@ -95,6 +108,7 @@ Vue.component('app-landing', {
                     $('#swimimg').css('opacity', 1);
                     break;
                 case "website":
+                    $('body').css('background-color', '#29252c');
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
                     $('.landingCon h1').css('color', '#ffc7c7');
                     $('.in').css('color', '#41444b')
@@ -104,6 +118,7 @@ Vue.component('app-landing', {
                     $('#webimg').css('opacity', 1);
                     break;
                 case "about":
+                    $('body').css('background-color', '#1e2022');
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
                     $('.landingCon h1').css('color', 'white');
                     $('.in').css('color', '#41444b')
@@ -113,6 +128,7 @@ Vue.component('app-landing', {
                     $('#landimg').css('opacity', 1);
                     break;
                 case "contact":
+                    $('body').css('background-color', '#1e2022');
                     $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
                     $('.landingCon h1').css('color', 'white');
                     $('.in').css('color', '#41444b')                    
