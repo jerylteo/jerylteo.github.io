@@ -1,10 +1,10 @@
 Vue.component('app-landing', {
     template:
     `
-    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage">
+    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage" @mousemove="mouseMove" @mouseup="mouseUp" @mousedown="mouseDown" @mouseleave="mouseLeave" @mouseenter="mouseEnter">
         <header class="row mt-5 mt-sm-0">
             <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" style="cursor: pointer;">
-                <div class="d-md-block d-flex align-items-center justify-content-center" @click.prevent="router.push('/');" >
+                <div class="d-md-block d-flex align-items-center justify-content-center">
                     <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
                     <p class="mb-0">Portfolio</p>
                 </div>
@@ -16,28 +16,27 @@ Vue.component('app-landing', {
                 </div>
             </div>
             <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
-                <h5 class="light mb-0">Full Stack Web Developer</h5>
+                <h5 @click.prevent="router.push('/website')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Full Stack Web Developer</h5>
                 <span style="font-size: 4rem;" class="mb-2">·</span>
-                <h5 class="light mb-0">Swimming Instructor</h5>
+                <h5 @click.prevent="router.push('/swimming')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Swimming Instructor</h5>
                 <span style="font-size: 4rem;" class="mb-2">·</span>
-                <h5 class="light mb-0">Photographer</h5>
+                <h5 @click.prevent="router.push('/photography')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Photographer</h5>
             </div>
         </header>
         <article class="row flex-grow-1 mb-5 landingContent">
-
             <div class="col-12 h-100 d-flex flex-column align-items-center">
                 <div class="row h-100 w-100">
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">
-                        <h5 @mouseover="state='landing'" class="lrotate text-nowrap" id="landing">The Hub</h5>
-                        <h5 @mouseover="state='website'" class="lrotate text-nowrap" id="website">Develop Websites</h5>
+                        <h5 @click.prevent="router.push('/')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='landing'" class="lrotate text-nowrap" id="landing">The Hub</h5>
+                        <h5 @click.prevent="router.push('/website')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='website'" class="lrotate text-nowrap" id="website">Develop Websites</h5>
                     </div>
                     <div class="col-6 d-flex align-items-center justify-content-center">
                         <div class="landingCon">
-                            <div class="landingImg" style="overflow: hidden;">
-                                <img id="landimg" src="/images/hero.png" alt="landing" class="img-fluid">
-                                <img id="photimg" src="/images/gal2.jpg" alt="photography" class="img-fluid">
-                                <img id="swimimg" src="/images/swim.jpg" alt="swimming" class="img-fluid">
-                                <img id="webimg" src="/images/website.png" alt="swimming" class="img-fluid">
+                            <div class="landingImg" style="overflow: hidden;" id="landingImg">
+                                <img id="landimg" :src="images[0]" alt="landing" class="img-fluid">
+                                <img id="photimg" :src="images[1]" alt="photography" class="img-fluid">
+                                <img id="swimimg" :src="images[2]" alt="swimming" class="img-fluid">
+                                <img id="webimg" :src="images[3]" alt="swimming" class="img-fluid">
                                 <h1 class="d-none d-sm-block in" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
                                 <h1 class="d-none d-sm-block in" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
                             </div>
@@ -47,18 +46,26 @@ Vue.component('app-landing', {
                         </div>
                     </div>
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">
-                        <h5 @mouseover="state='swimming'" class="rrotate text-nowrap" id="swimming">Learn Swimming</h5>
-                        <h5 @mouseover="state='photography'" class="rrotate text-nowrap" id="photography">Get Photographed</h5>
+                        <h5 @click.prevent="router.push('/swimming')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='swimming'" class="rrotate text-nowrap" id="swimming">Learn Swimming</h5>
+                        <h5 @click.prevent="router.push('/photography')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='photography'" class="rrotate text-nowrap" id="photography">Get Photographed</h5>
                     </div>
                 </div>
                 <div class="row w-sm-75 w-100">
                     <div class="col-12 d-flex align-items-end justify-content-between justify-content-sm-around">
-                        <h5 @mouseover="state='about'" class="scale">About Me</h5>
-                        <h5 @mouseover="state='contact'" class="scale">Contact Me</h5>
+                        <h5 @click.prevent="router.push('/about')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='about'" class="scale">About Me</h5>
+                        <h5 @click.prevent="router.push('/contact')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='contact'" class="scale">Contact Me</h5>
                     </div>
                 </div>
             </div>
-
+        </article>
+        <div class="cursor"></div>
+    </section>
+    <section class="d-flex align-items-center justify-content-center vh-100" id="loadCon" v-else>
+        <article>
+            <div class="loadAnim" id="loadbar1"></div>
+            <div class="loadAnim" id="loadbar2"></div>
+            <div class="loadAnim" id="loadbar3"></div>
+            <div class="loadAnim" id="loadbar4"></div>
         </article>
     </section>
     `,
@@ -67,6 +74,12 @@ Vue.component('app-landing', {
             heroT: "THE",
             heroB: "HUB",
             state: "",
+            images: [
+                '/images/hero.png',
+                '/images/gal2.jpg',
+                '/images/swim.jpg',
+                '/images/website.png'
+            ],
         }
     },
     watch: {
@@ -144,8 +157,53 @@ Vue.component('app-landing', {
             $('.landingCon h1').removeClass('animate__animated animate__fadeOutRight');
             $('.landingCon h1').addClass('animate__animated animate__fadeInLeft');
         },
+        mouseMove(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                'top': e.clientY - cursor.height()/2 +'px',
+                'left': e.clientX - cursor.width()/2 +'px',
+            })
+            console.log(cursor.css('top'))
+        },
+        mouseUp(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                'transform': "scale(1)"
+            })
+        },
+        mouseDown(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                'transform': "scale(.2)"
+            })
+        },
+        mouseEnter(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                'opacity': "1"
+            })
+        },
+        mouseLeave(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                'opacity': "0"
+            });
+        },
+        linkMouseEnter(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                transform: "scale(1.5)"
+            })
+        },
+        linkMouseLeave(e) {
+            let cursor = $('.cursor');
+            cursor.css({
+                transform: "scale(1)"
+            })
+        }
     },
     mounted() {
         this.state = "landing";
+
     }
 })

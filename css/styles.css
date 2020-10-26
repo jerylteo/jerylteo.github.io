@@ -9,6 +9,19 @@ body {
 html {
     font-size: 10px;
 }
+.cursor {
+    position: fixed;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    background-color: transparent;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+
+    transition: transform 200ms;
+}
 h1 {
     font-family: fira-sans, sans-serif;
     font-size: 5rem;
@@ -50,10 +63,13 @@ p, span, li, input {
     font-weight: 100 !important;
     font-size: 1.5rem;
 }
-
+.landingPage {
+    position: relative;
+    cursor: none;
+}
 .landingPage h5 {
     font-weight: 400;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .landingCon {
     position: relative;
@@ -149,4 +165,29 @@ p, span, li, input {
 
 .animate__fadeOutRight, .animate__fadeInLeft {
     --animate-duration: 200ms;
+}
+
+#loadCon article {
+    height: 30vh;
+    width: 24vw;
+    display: flex;
+    justify-content: space-between;
+}
+.loadAnim {
+    width: 5vw;
+    background-color: cyan;
+    animation: loading 500ms alternate infinite;
+}
+#loadbar2 {animation-delay: 100ms;}
+#loadbar3 {animation-delay: 200ms;}
+#loadbar4 {animation-delay: 300ms;}
+@keyframes loading {
+    from {
+        transform: scaleY(1);
+        background-color: cyan;
+    }
+    to {
+        transform: scaleY(.5);
+        background-color: indigo;
+    }
 }
