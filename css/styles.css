@@ -122,6 +122,14 @@ p, span, li, input {
 }
 
 
+@media (max-width: 575px) {
+    body {
+        overflow: hidden;
+    }
+    .cursor {
+        display: none;
+    }
+}
 /*  Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     h1 {
