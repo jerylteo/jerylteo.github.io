@@ -14,7 +14,7 @@ html {
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    border: 1px solid #eeeeee;
+    border: 2px solid #eeeeee;
     background-color: transparent;
     pointer-events: none;
     mix-blend-mode: difference;
