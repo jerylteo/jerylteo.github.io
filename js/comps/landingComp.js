@@ -163,7 +163,6 @@ Vue.component('app-landing', {
                 'top': e.clientY - cursor.height()/2 +'px',
                 'left': e.clientX - cursor.width()/2 +'px',
             })
-            console.log(cursor.css('top'))
         },
         mouseUp(e) {
             let cursor = $('.cursor');
