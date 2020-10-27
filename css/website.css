@@ -1,0 +1,39 @@
+body {
+    background-color: white !important;
+    color: #222222;
+    overflow-x: hidden;
+}
+.websitePage {
+    background-color: #f6f4e6;
+}
+.websitePage h1 {
+    font-size: 10rem;
+}
+.websitePage .btn {
+    background-color: #FDD83A;
+    color: #222222;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+.websitePage #myworks {
+    background-color: #41444B;
+}
+.websitePage .webWorksImg {
+    height: 30rem;
+    background-color: #eeeeee;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.16);
+}
+.websitePage #myfooter {
+    border-radius: 1rem 1rem 0 0;
+    margin-top: 5rem;
+}
+.websitePage .webServices {
+    background-color: #FDD83A; 
+    color: #222222;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
