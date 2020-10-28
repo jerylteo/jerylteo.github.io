@@ -1,7 +1,9 @@
 .websitePage {
-    background-color: #f6f4e6;
     color: #222222;
     overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #f6f4e6;
+
 }
 .websitePage .mt-6{
     margin-top: 5rem !important;
@@ -13,7 +15,10 @@
 .websitePage h3 {
     font-size: 2.4rem;
 }
-.websitePage p {
+.websitePage input, .websitePage textarea {
+    background-color: transparent;
+}
+.websitePage p, .websitePage input, .websitePage textarea {
     font-size: 1.8rem;
 }
 .websitePage .btn {
@@ -24,6 +29,10 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    transition: all 250ms;
+}
+.websitePage .btn:hover {
+    transform: scale(1.2);
 }
 .websitePage .webAbout {
     margin-top: 15rem;
@@ -36,8 +45,7 @@
     height: 150vh;
 }
 .websitePage .webWorksImg {
-    min-height: 20rem;
-    max-height: 30rem;
+    height: 25rem;
     background-color: #eeeeee;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.16);
@@ -92,7 +100,11 @@
         font-size: 3rem;
     }
     .websitePage #contactme {
-        margin-top: 15rem;
+        margin-top: 20rem;
+    }
+    .websitePage .webWorks {
+        margin-top: 3rem;
+        height: 100vh;
     }
 }
 
@@ -101,22 +113,22 @@
     .websitePage h3 {
         font-size: 3.5rem;
     }
-    .websitePage #contactme {
-        margin-top: 35rem;
-    }
-    .websitePage .webWorks {
-        margin-top: 3rem;
-        height: 100vh;
-    }
+
 }
 
 /*  Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+    .websitePage h2 {
+        font-size: 5rem;
+    }
     .websitePage .webWorks {
         margin-top: 10rem;
     }
     .websitePage #contactme {
         margin-top: 30rem;
+    }
+    .websitePage p, .websitePage input, .websitePage textarea {
+        font-size: 2rem;
     }
 }
 

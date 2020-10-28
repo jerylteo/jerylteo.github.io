@@ -153,8 +153,8 @@ Vue.component('app-website', {
                     <h5>// CONTACT DETAILS</h5>
                     <div class="mt-3 mb-5" style="color: #52575D;">
                         <p><i class="fas fa-mobile-alt mr-5"></i> +65 8769 1664</p>
-                        <p><i class="fas fa-globe mr-5"></i> https://www.jerylteo.com/</p>
-                        <p><i class="fas fa-inbox mr-5"></i> jerylteo@outlook.com</p>
+                        <p><i class="fas fa-globe mr-5"></i> <a style="color: #52575D;" href="https://www.jerylteo.com/">https://www.jerylteo.com/</a></p>
+                        <p><i class="fas fa-inbox mr-5"></i> <a style="color: #52575D;" href="mailto:jerylteo@outlook.com">jerylteo@outlook.com</a></p>
                     </div>
                     <h5>// SOCIAL</h5>
                     <div class="d-flex align-items-center mt-3 mb-5" style="color: #52575D;">
@@ -164,7 +164,7 @@ Vue.component('app-website', {
                         <a class="text-dark" href="http://be.net/jerylteo"><i class="fab fa-behance fa-3x"></i></a>
                     </div>
                     <h5>// PROJECT OPPORTUNITIES</h5>
-                    <p class="mt-3" style="color: #52575D;">I am currently competing in WorldSkills ASEAN and WorldSkills International and will be unavailable for work until October 2021.</p>
+                    <p class="mt-3" style="color: #52575D;">&lt;!-- I am currently competing in WorldSkills ASEAN and WorldSkills International and will be unavailable for work until October 2021. --&gt;</p>
                 </article>
             </section>
         </section>
@@ -179,9 +179,9 @@ Vue.component('app-website', {
             <div class="col-12 col-lg-6 mt-5 d-flex flex-wrap justify-content-between align-items-center">
                 <a style="color: #eeeeee !important;" @click.prevent="router.push('/')" href="#"><h5>Landing Page</h5></a>
                 <a style="color: #eeeeee !important;" href="#aboutme"><h5>About Me</h5></a>
-                <a style="color: #eeeeee !important;" href="#"><h5>My Works</h5></a>
-                <a style="color: #eeeeee !important;" href="#"><h5>My Services</h5></a>
-                <a style="color: #eeeeee !important;" href="#"><h5>Contact Me</h5></a>
+                <a style="color: #eeeeee !important;" href="#myworks"><h5>My Works</h5></a>
+                <a style="color: #eeeeee !important;" href="#myservices"><h5>My Services</h5></a>
+                <a style="color: #eeeeee !important;" href="#contactme"><h5>Contact Me</h5></a>
             </div>
             <p class="col-12 col-lg-6 text-center text-md-right mt-5">Copyright &copy; 2020. All Rights Reserved.</p>
 
