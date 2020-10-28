@@ -1,13 +1,20 @@
-body {
-    background-color: white !important;
-    color: #222222;
-    overflow-x: hidden;
-}
 .websitePage {
     background-color: #f6f4e6;
+    color: #222222;
+    overflow-y: scroll;
 }
+.websitePage .mt-6{
+    margin-top: 5rem !important;
+}
+
 .websitePage h1 {
-    font-size: 10rem;
+    font-size: 2.4rem;
+}
+.websitePage h3 {
+    font-size: 2.4rem;
+}
+.websitePage p {
+    font-size: 1.8rem;
 }
 .websitePage .btn {
     background-color: #FDD83A;
@@ -18,11 +25,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
 }
+.websitePage .webAbout {
+    margin-top: 15rem;
+}
 .websitePage #myworks {
     background-color: #41444B;
 }
+.websitePage .webWorks {
+    margin-top: 3rem;
+    height: 150vh;
+}
 .websitePage .webWorksImg {
-    height: 30rem;
+    min-height: 20rem;
+    max-height: 30rem;
     background-color: #eeeeee;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.16);
@@ -36,4 +51,120 @@ body {
     color: #222222;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    margin-top: 4rem;
+}
+.websitePage .horPadding {
+    padding: 0 3rem;
+}
+.websitePage #contactme {
+    margin-top: 70rem;
+    color: #222222;
+}
+.websitePage .worksLink {
+    font-size: 2.4rem;
+}
+
+@media (min-width: 411px) {
+    .websitePage #contactme {
+        margin-top: 60rem;
+        color: #222222;
+    }
+}
+@media (min-width: 476px) {
+    .websitePage #contactme {
+        margin-top: 55rem;
+        color: #222222;
+    }
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    .websitePage .horPadding {
+        padding: 0 7rem;
+    }
+    .websitePage h1 {
+        font-size: 5rem;
+    }
+    .websitePage h2 {
+        font-size: 2.4rem;
+    }
+    .websitePage h3 {
+        font-size: 3rem;
+    }
+    .websitePage #contactme {
+        margin-top: 15rem;
+    }
+}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .websitePage h3 {
+        font-size: 3.5rem;
+    }
+    .websitePage #contactme {
+        margin-top: 35rem;
+    }
+    .websitePage .webWorks {
+        margin-top: 3rem;
+        height: 100vh;
+    }
+}
+
+/*  Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .websitePage .webWorks {
+        margin-top: 10rem;
+    }
+    .websitePage #contactme {
+        margin-top: 30rem;
+    }
+}
+
+/*  Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .websitePage h1 {
+        font-size: 6rem;
+    }
+    .websitePage .horPadding {
+        padding: 0 10rem;
+    }
+    .websitePage .mr-xl-5 {
+        margin-right: 3rem !important;
+    }
+    .websitePage .worksLink {
+        font-size: 4rem;
+    }
+    .websitePage #contactme {
+        margin-top: 40rem;
+    }
+}
+@media (min-width: 1350px) { 
+    .websitePage h1 {
+        font-size: 7rem;
+    }
+    .websitePage .my-xl-7 {
+        margin-top: 7rem !important;
+        margin-bottom: 7rem !important;
+    }
+    .websitePage .webServices {
+        margin-top: 10rem;
+    }
+}
+@media (min-width: 1450px) { 
+    .websitePage h1 {
+        font-size: 8rem;
+    }
+    .websitePage .worksLink {
+        font-size: 5rem;
+    }
+}
+@media (min-width: 1550px) {
+    .websitePage h1 {
+        font-size: 9rem;
+    }
+}
+@media (min-width: 1700px) {
+    .websitePage h1 {
+        font-size: 10rem;
+    }
 }
