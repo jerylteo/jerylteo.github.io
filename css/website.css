@@ -1,15 +1,19 @@
+main {
+    background-color: white;
+    cursor: none !important;
+}
+
 .websitePage {
     color: #222222;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: #f6f4e6;
-
 }
 .websitePage .mt-6{
     margin-top: 5rem !important;
 }
-
-.websitePage h1 {
+:root {
+    --swiper-navigation-color: #FDD83A !important;
+    --swiper-theme-color: #FDD83A !important;
+}
+.websitePage h1, .websitePage .cssanimation span {
     font-size: 2.4rem;
 }
 .websitePage h3 {
@@ -32,24 +36,64 @@
     transition: all 250ms;
 }
 .websitePage .btn:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    cursor: none;
 }
-.websitePage .webAbout {
-    margin-top: 15rem;
+.websitePage a:hover, .websitePage input:hover, .websitePage textarea:hover, .websitePage div:hover {
+    cursor: none;
 }
+.websitePage .webMain {
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+    background-color: #f6f4e6;
+}
+
 .websitePage #myworks {
     background-color: #41444B;
 }
-.websitePage .webWorks {
-    margin-top: 3rem;
-    height: 150vh;
+.websitePage .swiper-container {
+    width: 75vw;
+    height: 75vh;
 }
-.websitePage .webWorksImg {
+.websitePage .swiper-slide {
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+.websitePage .swiper-slide img {
+    border-radius: 1rem;
+}
+.websitePage .swiper-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.websitePage .swiper-bg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+}
+.websitePage .swiper-bgblur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+.websitePage .swiper-bg h3 {
+    z-index: 2;
+    font-style: italic;
+}
+/* .websitePage .webWorksImg {
     height: 25rem;
     background-color: #eeeeee;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.16);
-}
+} */
 .websitePage #myfooter {
     border-radius: 1rem 1rem 0 0;
     margin-top: 5rem;
@@ -64,33 +108,13 @@
 .websitePage .horPadding {
     padding: 0 3rem;
 }
-.websitePage #contactme {
-    margin-top: 70rem;
-    color: #222222;
-}
 .websitePage .worksLink {
     font-size: 2.4rem;
 }
 
-@media (min-width: 411px) {
-    .websitePage #contactme {
-        margin-top: 60rem;
-        color: #222222;
-    }
-}
-@media (min-width: 476px) {
-    .websitePage #contactme {
-        margin-top: 55rem;
-        color: #222222;
-    }
-}
-
 /*  Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
-    .websitePage .horPadding {
-        padding: 0 7rem;
-    }
-    .websitePage h1 {
+    .websitePage h1, .websitePage .cssanimation span {
         font-size: 5rem;
     }
     .websitePage h2 {
@@ -99,11 +123,7 @@
     .websitePage h3 {
         font-size: 3rem;
     }
-    .websitePage #contactme {
-        margin-top: 20rem;
-    }
     .websitePage .webWorks {
-        margin-top: 3rem;
         height: 100vh;
     }
 }
@@ -121,12 +141,6 @@
     .websitePage h2 {
         font-size: 5rem;
     }
-    .websitePage .webWorks {
-        margin-top: 10rem;
-    }
-    .websitePage #contactme {
-        margin-top: 30rem;
-    }
     .websitePage p, .websitePage input, .websitePage textarea {
         font-size: 2rem;
     }
@@ -134,11 +148,8 @@
 
 /*  Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
-    .websitePage h1 {
+    .websitePage h1, .websitePage .cssanimation span {
         font-size: 6rem;
-    }
-    .websitePage .horPadding {
-        padding: 0 10rem;
     }
     .websitePage .mr-xl-5 {
         margin-right: 3rem !important;
@@ -146,20 +157,10 @@
     .websitePage .worksLink {
         font-size: 4rem;
     }
-    .websitePage #contactme {
-        margin-top: 40rem;
-    }
 }
 @media (min-width: 1350px) { 
-    .websitePage h1 {
+    .websitePage h1, .websitePage .cssanimation span {
         font-size: 7rem;
-    }
-    .websitePage .my-xl-7 {
-        margin-top: 7rem !important;
-        margin-bottom: 7rem !important;
-    }
-    .websitePage .webServices {
-        margin-top: 10rem;
     }
 }
 @media (min-width: 1450px) { 
@@ -171,12 +172,12 @@
     }
 }
 @media (min-width: 1550px) {
-    .websitePage h1 {
+    .websitePage h1, .websitePage .cssanimation span {
         font-size: 9rem;
     }
 }
 @media (min-width: 1700px) {
-    .websitePage h1 {
+    .websitePage h1, .websitePage .cssanimation span {
         font-size: 10rem;
     }
 }
