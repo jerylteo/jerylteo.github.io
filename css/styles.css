@@ -66,6 +66,8 @@ p, span, li, input {
 .landingPage {
     position: relative;
     cursor: none;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
 }
 .landingPage h5 {
     font-weight: 400;

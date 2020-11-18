@@ -1,8 +1,7 @@
-main {
+body {
+    cursor: none;
     background-color: white;
-    cursor: none !important;
 }
-
 .websitePage {
     color: #222222;
 }

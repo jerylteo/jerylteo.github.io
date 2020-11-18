@@ -1,8 +1,8 @@
 Vue.component('app-landing', {
     template:
     `
-    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid d-flex flex-column h-100 p-5 landingPage" @mousemove="mouseMove" @mouseup="mouseUp" @mousedown="mouseDown" @mouseleave="mouseLeave" @mouseenter="mouseEnter">
-        <header class="row mt-5 mt-sm-0">
+    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid p-5 landingPage" @mousemove="mouseMove" @mouseup="mouseUp" @mousedown="mouseDown" @mouseleave="mouseLeave" @mouseenter="mouseEnter">
+        <header class="row mt-5 mt-sm-0 align-items-center">
             <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" style="cursor: pointer;">
                 <div class="d-md-block d-flex align-items-center justify-content-center">
                     <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
@@ -23,7 +23,7 @@ Vue.component('app-landing', {
                 <h5 @click.prevent="router.push('/photography')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Photographer</h5>
             </div>
         </header>
-        <article class="row flex-grow-1 mb-5 landingContent">
+        <article class="row mb-5 landingContent">
             <div class="col-12 h-100 d-flex flex-column align-items-center">
                 <div class="row h-100 w-100">
                     <div class="col-3 d-flex flex-column align-items-center justify-content-around">

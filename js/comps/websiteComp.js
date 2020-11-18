@@ -275,5 +275,7 @@ Vue.component('app-website', {
                 el: '.swiper-scrollbar'
             }
         })
+
+        $('body').css('background-color', 'white')
     }
 })
