@@ -6,14 +6,8 @@ const mainComp = {template: '<app-main></app-main>'};
 // const aboutComp = {template: '<app-about></app-about>'};
 // const contactComp = {template: '<app-contact></app-contact>'};
 
-// const routes = [
-//     {path: '/', component: mainComp},
-//     {path: '/website', component: websiteComp},
-//     {path: '/swimming', component: swimmingComp},
-//     {path: '/photography', component: photographyComp},
-//     {path: '/about', component: aboutComp},
-//     {path: '/contact', component: contactComp},
-
-// ];
+const routes = [
+    {path: '/', component: mainComp},
+];
 
 const router = new VueRouter({routes});
