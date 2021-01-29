@@ -7,6 +7,7 @@ Vue.component('app-main', {
             <app-landing :header="header" v-if="currentComp == 'landing'"></app-landing>
             <app-website :header="header" v-if="currentComp == 'website'"></app-website>
             <app-swimming :header="header" v-if="currentComp == 'swimming'"></app-swimming>
+            <app-photography :header="header" v-if="currentComp == 'photography'"></app-photography>
             <app-contact @link="changeComp" :header="header" v-else-if="currentComp == 'contact'"></app-contact>
             <div class="cursor" ref="cursor"></div>
         </transition>
