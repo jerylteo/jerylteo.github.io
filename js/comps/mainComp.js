@@ -8,6 +8,7 @@ Vue.component('app-main', {
             <app-contact @link="changeComp" :header="header" v-else-if="currentComp == 'contact'"></app-contact>
             <div class="cursor" ref="cursor"></div>
         </transition>
+        <div ref="cursor" class="cursor"></div>
     </section>
     `,
     data() {
