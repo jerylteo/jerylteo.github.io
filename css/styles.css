@@ -1,18 +1,45 @@
-* {
-    padding: 0;
-    margin: 0;
+:root {
+    --dark: #222831;
+    --grey: #393e46;
+    --turquoise: #00adb5;
+    --light: #eeeeee;
 }
 body {
-    transition: background-color 250ms ease;
-    color: #eeeeee;
+    font-family: fira-sans, sans-serif;
 }
-html {
-    font-size: 10px;
+
+.bg-dark {
+    background-color: var(--dark);
 }
+.bg-grey {
+    background-color: var(--grey);
+}
+.bg-turquoise {
+    background-color: var(--turquoise);
+}
+.bg-light {
+    background-color: var(--light);
+}
+.text-turquoise {
+    color: var(--turquoise);
+}
+.text-grey {
+    color: var(--grey);
+}
+.text-light {
+    color: var(--light);
+}
+.border-turquoise {
+    border-color: var(--turquoise);
+}
+.font-sub {
+    font-family: montserrat, sans-serif;
+}
+
 .cursor {
     position: fixed;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     border: 2px solid #eeeeee;
     background-color: transparent;
@@ -22,182 +49,38 @@ html {
 
     transition: transform 200ms;
 }
-h1 {
-    font-family: fira-sans, sans-serif;
-    font-size: 5rem;
-    font-weight: 900;
-    font-style: normal;
-    letter-spacing: 1rem;
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--light);
 }
-h2 {
-    font-family: fira-sans, sans-serif;
-    font-size: 5rem;
-    font-weight: 800;
-    font-style: normal;
+.showMenu {
+    animation: showMenuAnim 300ms linear forwards;
 }
-h3 {
-    font-family: fira-sans, sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    font-style: normal;
+.closeMenu {
+    animation: closeMenuAnim 300ms linear forwards;
 }
-h4 {
-    font-family: fira-sans, sans-serif;
-    font-size: 2.4rem;
-    font-weight: 600;
-    font-style: normal;
+
+@keyframes showMenuAnim {
+    from {right: -50%}
+    to {right: 0%};
 }
-h5 {
-    font-family: fira-sans, sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    font-style: normal;
+@keyframes closeMenuAnim {
+    from {right: 0%;}
+    to {right: -50%};
 }
-p, span, li, input {
-    font-family: montserrat, sans-serif;
-    font-size: 2rem;
-    font-weight: 400;
-    font-style: normal;
+
+button.custom_btn:hover {
+    background-color: var(--turquoise);
+    color: var(--light);
 }
-.light {
-    font-weight: 100 !important;
-    font-size: 1.5rem;
+textarea.custom_border, input.custom_border {
+    border-color: var(--turquoise);
 }
-.landingPage {
-    position: relative;
-    cursor: none;
-    display: grid;
-    grid-template-rows: 1fr 6fr;
-}
-.landingPage h5 {
-    font-weight: 400;
-    /* cursor: pointer; */
-}
-.landingCon {
-    position: relative;
-    width: 100%;
-    height: 55vh;
-}
-.landingImg {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.16);
-}
-.landingImg img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: absolute;
-    border-radius: 1rem;
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .fade-enter, .fade-leave-to {
     opacity: 0;
-    transition: all .5s ease-out;
-}
-.landingCon h1 {
-    position: absolute;
-}
-.landingCon #heroT {
-    top: 10vh;
-    left: -3vw;
-}
-.landingCon #heroB {
-    bottom: 10vh;
-    right: -3vw;
-}
-
-.landingContent .scale:hover {transform: scale(1.1);}
-.lrotate {transform: rotate(-90deg);}
-.rrotate {transform: rotate(90deg);}
-.landingContent h5 {transition: transform 200ms ease-in-out;}
-.lrotate:hover {
-    transform: rotate(-90deg) scale(1.1);
-}
-.rrotate:hover {
-    transform: rotate(90deg) scale(1.1);
-}
-.opacity {
-    opacity: 1;
-}
-.landingCon .in {
-    z-index: 10;
-}
-
-
-@media (max-width: 575px) {
-    body {
-        overflow: hidden;
-    }
-    .cursor {
-        display: none;
-    }
-}
-/*  Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
-    h1 {
-        font-size: 6rem;
-    }
-}
-
-/*  Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
-    h1 {
-        font-size: 8rem;
-    }
-}
-
-/*  Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-    h1 {
-        font-size: 8rem;
-    }
-}
-
-/*  Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { 
-    h1 {
-        font-size: 10rem;
-    }
-}
-@media (min-width: 1500px) {
-    h1 {
-        font-size: 15rem;
-    }
-    .landingCon #heroT {
-        top: 5vh;
-        left: -7.5vw;
-    }
-    .landingCon #heroB {
-        bottom: 5vh;
-        right: -7.5vw;
-    }
-}
-
-.animate__fadeOutRight, .animate__fadeInLeft {
-    --animate-duration: 200ms;
-}
-
-#loadCon article {
-    height: 30vh;
-    width: 24vw;
-    display: flex;
-    justify-content: space-between;
-}
-.loadAnim {
-    width: 5vw;
-    background-color: cyan;
-    animation: loading 500ms alternate infinite;
-}
-#loadbar2 {animation-delay: 100ms;}
-#loadbar3 {animation-delay: 200ms;}
-#loadbar4 {animation-delay: 300ms;}
-@keyframes loading {
-    from {
-        transform: scaleY(1);
-        background-color: cyan;
-    }
-    to {
-        transform: scaleY(.5);
-        background-color: indigo;
-    }
-}
+  }

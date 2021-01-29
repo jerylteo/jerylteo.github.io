@@ -1,208 +1,172 @@
 Vue.component('app-landing', {
     template:
     `
-    <section style="max-width: 99vw; overflow: hidden;" class="vh-100 container-fluid p-5 landingPage" @mousemove="mouseMove" @mouseup="mouseUp" @mousedown="mouseDown" @mouseleave="mouseLeave" @mouseenter="mouseEnter">
-        <header class="row mt-5 mt-sm-0 align-items-center">
-            <div class="col-md-3 col-12 d-block justify-content-center mb-3 mb-md-0" style="cursor: pointer;">
-                <div class="d-md-block d-flex align-items-center justify-content-center">
-                    <h3 class="mb-0 mr-3 mr-md-0 text-nowrap" style="font-weight: 500; line-height: 3rem;">JERYL TEO</h3>
-                    <p class="mb-0">Portfolio</p>
-                </div>
-                <div class="d-md-block d-flex align-items-center justify-content-center mt-3">
-                    <a class="text-light" href="https://www.facebook.com/jerylteoSI"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="https://www.instagram.com/jerylteo.si/" class="text-light"><i class="fab fa-instagram fa-2x mx-3"></i></a>
-                    <a href="https://www.linkedin.com/in/jerylteo/" class="text-light"><i class="fab fa-linkedin-in fa-2x"></i></a>
-                    <a href="http://be.net/jerylteo" class="text-light ml-3"><i class="fab fa-behance fa-2x"></i></a>
-                </div>
-            </div>
-            <div class="offset-xl-3 col-xl-6  col-md-9 col-12 d-sm-flex justify-content-between align-items-center d-none">
-                <h5 @click.prevent="router.push('/website')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Full Stack Web Developer</h5>
-                <span style="font-size: 4rem;" class="mb-2">·</span>
-                <h5 @click.prevent="router.push('/swimming')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Swimming Instructor</h5>
-                <span style="font-size: 4rem;" class="mb-2">·</span>
-                <h5 @click.prevent="router.push('/photography')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" class="light mb-0">Photographer</h5>
-            </div>
-        </header>
-        <article class="row mb-5 landingContent">
-            <div class="col-12 h-100 d-flex flex-column align-items-center">
-                <div class="row h-100 w-100">
-                    <div class="col-3 d-flex flex-column align-items-center justify-content-around">
-                        <h5 @click.prevent="router.push('/')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='landing'" class="lrotate text-nowrap" id="landing">The Hub</h5>
-                        <h5 @click.prevent="router.push('/website')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='website'" class="lrotate text-nowrap" id="website">Develop Websites</h5>
-                    </div>
-                    <div class="col-6 d-flex align-items-center justify-content-center">
-                        <div class="landingCon">
-                            <div class="landingImg" style="overflow: hidden;" id="landingImg">
-                                <img id="landimg" :src="images[0]" alt="landing" class="img-fluid">
-                                <img id="photimg" :src="images[1]" alt="photography" class="img-fluid">
-                                <img id="swimimg" :src="images[2]" alt="swimming" class="img-fluid">
-                                <img id="webimg" :src="images[3]" alt="swimming" class="img-fluid">
-                                <h1 class="d-none d-sm-block in" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
-                                <h1 class="d-none d-sm-block in" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
+        <section :style="resize" class="container mx-auto p-8 pt-0 xl:pt-8 flex flex-col">
+            <section class="flex-grow">
+                <article class="swiper-container h-full">
+                    <div class="swiper-wrapper h-full">
+                        <div class="swiper-slide h-full grid grid-cols-1 md:grid-cols-2 gap-20 px-0 md:px-4 lg:px-0" v-for="(data, index) in banners">
+                            <div class="h-full w-full flex items-center">
+                                <div class="w-full text-center md:text-left">
+                                    <h1 class="text-5xl sm:text-6xl md:text-8xl 2xl:text-9xl text-light">{{data.title}}</h1>
+                                    <div class="w-1/2 mx-auto md:ml-0 h-1.5 bg-turquoise my-10 xl:my-14"></div>
+                                    <div ref="description" v-html="data.description" class="w-2/3 md:w-full mx-auto"></div>
+                                    <div v-if="data.socialMedia" class="mt-8 xl:mt-10 flex justify-center md:justify-start">
+                                        <a href="#" class="block w-6 h-6 mr-4">
+                                            <img src="./resources/icons/facebook.svg" alt="Facebook | Jeryl Teo" class="w-full h-full object-cover">
+                                        </a>
+                                        <a href="#" class="block w-6 h-6 mr-4">
+                                            <img src="./resources/icons/instagram.svg" alt="Instagram | Jeryl Teo" class="w-full h-full object-cover">
+                                        </a>
+                                        <a href="#" class="block w-6 h-6">
+                                            <img src="./resources/icons/linkedin.svg" alt="LinkedIn | Jeryl Teo" class="w-full h-full object-cover">
+                                        </a>
+                                    </div>
+                                    <router-link to="data.link" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10">{{data.linkText}}</router-link>
+                                </div>
                             </div>
-                            <h1 class="d-none d-sm-block" id="heroT" @animationend="removeAnim()">{{heroT}}</h1>
-                            <h1 class="d-none d-sm-block" id="heroB" @animationend="removeAnim()">{{heroB}}</h1>
-                            <p style="font-size: 1rem;" class="text-muted font-weight-light text-center mt-4 d-none d-md-block">Hover over any of the links!</p>
+                            <div v-if="!data.largeOnly" class="h-full w-full hidden md:flex flex-col justify-center">
+                                <div class="w-full flex justify-end items-center" v-html="data.image"></div>
+                                <a v-if="data.caption" class="text-right text-sm font-medium text-light opacity-50 mt-4">{{data.caption}}</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-3 d-flex flex-column align-items-center justify-content-around">
-                        <h5 @click.prevent="router.push('/swimming')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='swimming'" class="rrotate text-nowrap" id="swimming">Learn Swimming</h5>
-                        <h5 @click.prevent="router.push('/photography')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='photography'" class="rrotate text-nowrap" id="photography">Get Photographed</h5>
-                    </div>
+                </article>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </section>
+            <nav class="hidden md:flex justify-between items-center text-light mt-8">
+                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 0 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(0)">
+                    <span class="text-turquoise text-sm inline-block mr-4">00</span>
+                    <span class="text-light text-sm inline-block">ABOUT</span>
                 </div>
-                <div class="row w-sm-75 w-100">
-                    <div class="col-12 d-flex align-items-end justify-content-between justify-content-sm-around">
-                        <h5 @click.prevent="router.push('/about')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='about'" class="scale">About Me</h5>
-                        <h5 @click.prevent="router.push('/contact')" @mouseenter="linkMouseEnter" @mouseleave="linkMouseLeave" @mouseover="state='contact'" class="scale">Contact Me</h5>
-                    </div>
+                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 1 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(1)">
+                    <span class="text-turquoise text-sm inline-block mr-4">01</span>
+                    <span class="text-light text-sm inline-block">WEBSITE</span>
                 </div>
-            </div>
-        </article>
-        <div class="cursor"></div>
-    </section>
-    <section class="d-flex align-items-center justify-content-center vh-100" id="loadCon" v-else>
-        <article>
-            <div class="loadAnim" id="loadbar1"></div>
-            <div class="loadAnim" id="loadbar2"></div>
-            <div class="loadAnim" id="loadbar3"></div>
-            <div class="loadAnim" id="loadbar4"></div>
-        </article>
-    </section>
+                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 2 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(2)">
+                    <span class="text-turquoise text-sm inline-block mr-4">02</span>
+                    <span class="text-light text-sm inline-block">SWIMMING</span>
+                </div>
+                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 3 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(3)">
+                    <span class="text-turquoise text-sm inline-block mr-4">03</span>
+                    <span class="text-light text-sm inline-block">PHOTOGRAPHY</span>
+                </div>
+            </nav>
+            <nav class="flex md:hidden justify-center items-center">
+                <div class="w-4 h-4 rounded-full mr-4" :class="[currentSlide == 0 ? 'opacity-100 bg-turquoise' : 'opacity-50 bg-light']" @click="changeSlide(0)"></div>
+                <div class="w-4 h-4 rounded-full mr-4" :class="[currentSlide == 1 ? 'opacity-100 bg-turquoise' : 'opacity-50 bg-light']" @click="changeSlide(1)"></div>
+                <div class="w-4 h-4 rounded-full mr-4" :class="[currentSlide == 2 ? 'opacity-100 bg-turquoise' : 'opacity-50 bg-light']" @click="changeSlide(2)"></div>
+                <div class="w-4 h-4 rounded-full" :class="[currentSlide == 3 ? 'opacity-100 bg-turquoise' : 'opacity-50 bg-light']" @click="changeSlide(3)"></div>
+            </nav>
+        </section>
     `,
+    props: ["header"],
     data() {
         return {
-            heroT: "THE",
-            heroB: "HUB",
-            state: "",
-            images: [
-                '/images/hero.png',
-                '/images/gal2.jpg',
-                '/images/swim.jpg',
-                '/images/website.png'
-            ],
-        }
-    },
-    watch: {
-        state() {
-            this.animation();
+            cursor: undefined,
+            resize: {
+                height: '900px'
+            },
+            swiper: undefined,
+            currentSlide: 0,
+            banners: [
+                {
+                    id: 0,
+                    title: "GREETINGS",
+                    description: `
+                        <p class="font-sub text-light">My name is <span class="font-sub text-turquoise font-bold">Jeryl Teo</span></p>
+                        <p class="font-sub text-light mt-4">I am a Full Stack Web Developer, Swimming Instructor and Photographer</p>
+                        <p class="font-sub text-light mt-4 2xl:w-2/3">Hover over the banners at the bottom to explore, or click on my navigation links for services!</p>
+                        <p class="font-sub text-light text-xs opacity-75 mt-4 2xl:w-2/3">*Only Landing Page & Contact Page is working currently.</p>
+                    `,
+                    socialMedia: true,
+                    linkText: "WORK WITH ME >",
+                    link: "/contact",
+                    image: `<img src="./resources/images/about_me.svg" :alt="data.title" class="h-3/4 object-cover">`,
+                },
+                {
+                    id: 1,
+                    title: "WEB DEVELOPER",
+                    description: `
+                        <p class="font-sub text-light">Achieved WorldSkills Singapore - <span class="font-sub text-turquoise font-bold">Gold</span></p>
+                        <p class="font-sub text-light mt-4">Providing a <span class="font-sub text-light italic font-bold">solution</span> to everyone's needs</p>
+                        <p class="font-sub text-light mt-4 2xl:w-2/3">Portfolios, Web Applications, e-Commerce ...</p>
+                    `,
+                    linkText: "MORE INFORMATION >",
+                    link: "/websites",
+                    image: `<img src="./resources/images/agasrevamp.png" :alt="data.title" class="w-full object-contain rounded shadow">`,
+                    caption: "THE SHADES LAB",
+                },
+                {
+                    id: 2,
+                    title: "SWIMMING INSTRUCTOR",
+                    description: `
+                        <p class="font-sub text-light">I am an <span class="font-sub text-turquoise font-bold">Internationally</span> certified Swimming Instructor</p>
+                        <p class="font-sub text-light mt-4">I currently teach at <span class="font-sub text-turquoise font-bold">SAFRA</span> and <span class="font-sub text-turquoise font-bold">FREELANCE</span></p>
+                        <p class="font-sub text-light mt-4 2xl:w-2/3">First to the egg, swimming till 18, teaching ever since.</p>
+                    `,
+                    linkText: "LEARN SWIMMING WITH ME >",
+                    link: "/swimming",
+                    image: `<img src="./resources/images/open-doodles-bikini.svg" :alt="data.title" class="w-2/3 object-contain">`,
+                },
+                {
+                    id: 3,
+                    title: "FREELANCER",
+                    description: `
+                        <p class="font-sub text-light">I have an avid <span class="font-sub text-turquoise font-bold">passion</span> for photography</p>
+                        <p class="font-sub text-light mt-4">Using a <span class="font-sub text-turquoise font-bold">Nikon ..?</span> as my weapon of choice</p>
+                        <p class="font-sub text-light mt-4 2xl:w-2/3">I take portraits, macros, events and more!</p>
+                    `,
+                    linkText: "TAKE PICTURES WITH ME >",
+                    link: "/photography",
+                    image: `<img src="./resources/images/gal2.jpg" :alt="data.title" class="w-2/3 object-contain rounded shadow">`,
+                    caption: "MINI CACTUS @ NATIONAL GALLERY, SINGAPORE",
+                    largeOnly: true
+                }
+            ]
         }
     },
     methods: {
-        animation() {
-            switch(this.state) {
-                case "landing":
-                    $('body').css('background-color', '#1e2022');
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', 'white');
-                    $('.in').css('color', '#41444b');
-                    this.heroT = "THE";
-                    this.heroB = "HUB";
-                    $('.landingImg img').css('opacity', 0);
-                    $('#landimg').css('opacity', 1);
-                    break;
-                case "photography":
-                    $('body').css('background-color', '#2b2b28');
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', '#94d3ac');
-                    $('.in').css('color', 'white')
-                    this.heroT = "TAKE";
-                    this.heroB = "PICTURES";
-                    $('.landingImg img').css('opacity', '0');
-                    $('#photimg').css('opacity', 1);
-                    break;
-                case "swimming":
-                    $('body').css('background-color', '#222831')
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', '#28abb9');
-                    $('.in').css('color', 'white')
-                    this.heroT = "LEARN";
-                    this.heroB = "SWIMMING";
-                    $('.landingImg img').css('opacity', '0');
-                    $('#swimimg').css('opacity', 1);
-                    break;
-                case "website":
-                    $('body').css('background-color', '#29252c');
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', '#ffc7c7');
-                    $('.in').css('color', '#41444b')
-                    this.heroT = "DEVELOP";
-                    this.heroB = "WEBSITES";
-                    $('.landingImg img').css('opacity', '0');
-                    $('#webimg').css('opacity', 1);
-                    break;
-                case "about":
-                    $('body').css('background-color', '#1e2022');
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', 'white');
-                    $('.in').css('color', '#41444b')
-                    this.heroT = "ABOUT";
-                    this.heroB = "ME";
-                    $('.landingImg img').css('opacity', 0);
-                    $('#landimg').css('opacity', 1);
-                    break;
-                case "contact":
-                    $('body').css('background-color', '#1e2022');
-                    $('.landingCon h1').addClass('animate__animated animate__fadeOutRight');
-                    $('.landingCon h1').css('color', 'white');
-                    $('.in').css('color', '#41444b')                    
-                    this.heroT = "CONTACT";
-                    this.heroB = "ME";
-                    $('.landingImg img').css('opacity', 0);
-                    $('#landimg').css('opacity', 1);
-                    break;
+        dynamicResize() {
+            this.resize.height = window.innerHeight - this.header.$el.clientHeight + "px";
+            this.banners.forEach(ban => {
+                if (ban.id != 0) {
+                    ban.largeOnly = (window.innerWidth < 1024) ? true : false;
+                }
+            })
+        },
+        initSwiper() {
+            this.swiper = new Swiper('.swiper-container', {
+                loop: true,
+                simulateTouch: false,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                observer: true,
+                observeParents: true,
+                parallax: true,
+            })
+            this.swiper.on('transitionEnd', ()=> {
+                this.currentSlide = this.swiper.realIndex;
+            })
+        },
+        changeSlide(slide) {
+            console.log(this.currentSlide + " | " + this.swiper.realIndex);
+            this.currentSlide = slide;
+            this.swiper.slideTo(this.currentSlide+1);
+        },
 
-            }
-        },
-        removeAnim() {
-            $('.landingCon h1').removeClass('animate__animated animate__fadeOutRight');
-            $('.landingCon h1').addClass('animate__animated animate__fadeInLeft');
-        },
-        mouseMove(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                'top': e.clientY - cursor.height()/2 +'px',
-                'left': e.clientX - cursor.width()/2 +'px',
-            })
-        },
-        mouseUp(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                'transform': "scale(1)"
-            })
-        },
-        mouseDown(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                'transform': "scale(.2)"
-            })
-        },
-        mouseEnter(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                'opacity': "1"
-            })
-        },
-        mouseLeave(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                'opacity': "0"
-            });
-        },
-        linkMouseEnter(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                transform: "scale(1.5)"
-            })
-        },
-        linkMouseLeave(e) {
-            let cursor = $('.cursor');
-            cursor.css({
-                transform: "scale(1)"
-            })
-        }
+    },
+    created() {
+        window.addEventListener('resize', this.dynamicResize);
     },
     mounted() {
-        this.state = "landing";
-
+        this.dynamicResize();
+        this.initSwiper();
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.dynamicResize);
     }
 })
