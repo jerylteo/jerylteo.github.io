@@ -9,20 +9,20 @@ Vue.component('app-landing', {
                             <div class="h-full w-full flex items-center">
                                 <div class="w-full text-center md:text-left">
                                     <h1 class="text-5xl sm:text-6xl md:text-8xl 2xl:text-9xl text-light">{{data.title}}</h1>
-                                    <div class="w-1/2 mx-auto md:ml-0 h-1.5 bg-turquoise my-10 xl:my-14"></div>
+                                    <div class="w-1/2 mx-auto md:ml-0 h-1.5 bg-turquoise my-10 xl:my-14 line-animate"></div>
                                     <div ref="description" v-html="data.description" class="w-2/3 md:w-full mx-auto"></div>
                                     <div v-if="data.socialMedia" class="mt-8 xl:mt-10 flex justify-center md:justify-start">
-                                        <a href="#" class="block w-6 h-6 mr-4">
-                                            <img src="./resources/icons/facebook.svg" alt="Facebook | Jeryl Teo" class="w-full h-full object-cover">
+                                        <a href="https://www.facebook.com/jerylteoSI" class="block mr-4 cursor-none text-turquoise social-animate">
+                                            <i class="fab fa-facebook-f fa-lg"></i>
                                         </a>
-                                        <a href="#" class="block w-6 h-6 mr-4">
-                                            <img src="./resources/icons/instagram.svg" alt="Instagram | Jeryl Teo" class="w-full h-full object-cover">
+                                        <a href="https://www.instagram.com/jerylteo.si/" class="block w-6 h-6 mr-4 cursor-none text-turquoise social-animate">
+                                            <i class="fab fa-instagram fa-lg"></i>
                                         </a>
-                                        <a href="#" class="block w-6 h-6">
-                                            <img src="./resources/icons/linkedin.svg" alt="LinkedIn | Jeryl Teo" class="w-full h-full object-cover">
+                                        <a href="https://www.linkedin.com/in/jerylteo/" class="block w-6 h-6 cursor-none text-turquoise social-animate">
+                                            <i class="fab fa-linkedin-in fa-lg"></i>
                                         </a>
                                     </div>
-                                    <router-link to="data.link" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10">{{data.linkText}}</router-link>
+                                    <button @click="link('contact')" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10 link-animate-off">{{data.linkText}}</button>
                                 </div>
                             </div>
                             <div v-if="!data.largeOnly" class="h-full w-full hidden md:flex flex-col justify-center">
@@ -36,19 +36,19 @@ Vue.component('app-landing', {
                 <div class="swiper-button-next"></div>
             </section>
             <nav class="hidden md:flex justify-between items-center text-light mt-8">
-                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 0 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(0)">
+                <div class="flex items-center pb-2 pr-2 border-b-2 nav-animate" :class="[currentSlide == 0 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(0)">
                     <span class="text-turquoise text-sm inline-block mr-4">00</span>
                     <span class="text-light text-sm inline-block">ABOUT</span>
                 </div>
-                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 1 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(1)">
+                <div class="flex items-center pb-2 pr-2 border-b-2 nav-animate" :class="[currentSlide == 1 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(1)">
                     <span class="text-turquoise text-sm inline-block mr-4">01</span>
                     <span class="text-light text-sm inline-block">WEBSITE</span>
                 </div>
-                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 2 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(2)">
+                <div class="flex items-center pb-2 pr-2 border-b-2 nav-animate" :class="[currentSlide == 2 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(2)">
                     <span class="text-turquoise text-sm inline-block mr-4">02</span>
                     <span class="text-light text-sm inline-block">SWIMMING</span>
                 </div>
-                <div class="flex items-center pb-2 pr-2 border-b-2" :class="[currentSlide == 3 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(3)">
+                <div class="flex items-center pb-2 pr-2 border-b-2 nav-animate" :class="[currentSlide == 3 ? 'opacity-100 border-turquoise' : 'opacity-50 border-transparent']" @click="changeSlide(3)">
                     <span class="text-turquoise text-sm inline-block mr-4">03</span>
                     <span class="text-light text-sm inline-block">PHOTOGRAPHY</span>
                 </div>
@@ -128,6 +128,9 @@ Vue.component('app-landing', {
         }
     },
     methods: {
+        link(link) {
+            this.$emit("link", link);
+        },
         dynamicResize() {
             this.resize.height = window.innerHeight - this.header.$el.clientHeight + "px";
             this.banners.forEach(ban => {
@@ -139,6 +142,7 @@ Vue.component('app-landing', {
         initSwiper() {
             this.swiper = new Swiper('.swiper-container', {
                 loop: true,
+                speed: 500,
                 simulateTouch: false,
                 navigation: {
                     nextEl: '.swiper-button-next',

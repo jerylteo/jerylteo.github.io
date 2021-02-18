@@ -18,11 +18,11 @@ Vue.component('Header', {
                     <img src="./resources/icons/cancel.svg" alt="Cancel">
                 </div>
             </button>
-            <button @click="link('landing')" class="block mb-10 mr-8 lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base transition-all hover:text-white" :class="[currentComp=='landing' ? 'text-light' : 'text-turquoise']">LANDING PAGE</p><span class="text-turquoise text-lg lg:text-sm"> /></span></button>
-            <button @click="link('website')" class="block mb-10 mr-8 lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base transition-all hover:text-white" :class="[currentComp=='website' ? 'text-light' : 'text-turquoise']">WEBSITE</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
-            <button @click="link('swimming')" class="block mb-10 mr-8 lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base  transition-all hover:text-white" :class="[currentComp=='swimming' ? 'text-light' : 'text-turquoise']">SWIMMING</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
-            <button @click="link('photography')" class="block mb-10 mr-8 lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base transition-all hover:text-white" :class="[currentComp=='photography' ? 'text-light' : 'text-turquoise']">PHOTOGRAPHY</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
-            <button @click="link('contact')" class="block mr-8 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base transition-all hover:text-white" :class="[currentComp=='contact' ? 'text-light' : 'text-turquoise']">CONTACT</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
+            <button @click="link('landing')" class="block mb-10 mr-8 cursor-none lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base" :class="[currentComp=='landing' ? 'text-light link-animate-on' : 'text-turquoise link-animate-off']">LANDING PAGE</p><span class="text-turquoise text-lg lg:text-sm"> /></span></button>
+            <button @click="link('website')" class="block mb-10 mr-8 cursor-none lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base" :class="[currentComp=='website' ? 'text-light link-animate-on' : 'text-turquoise link-animate-off']">WEBSITE</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
+            <button @click="link('swimming')" class="block mb-10 mr-8 cursor-none lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base" :class="[currentComp=='swimming' ? 'text-light link-animate-on' : 'text-turquoise link-animate-off']">SWIMMING</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
+            <button @click="link('photography')" class="block mb-10 mr-8 cursor-none lg:mb-0 lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base" :class="[currentComp=='photography' ? 'text-light link-animate-on' : 'text-turquoise link-animate-off']">PHOTOGRAPHY</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
+            <button @click="link('contact')" class="block mr-8 cursor-none lg:mr-0"><span class="text-turquoise text-xl lg:text-sm">< </span><p class="inline text-3xl lg:text-base" :class="[currentComp=='contact' ? 'text-light link-animate-on' : 'text-turquoise link-animate-off']">CONTACT</p><span class="text-turquoise text-lg lg:text-sm"> /></span></router-link></button>
         </nav>
 
     </header>
@@ -61,5 +61,11 @@ Vue.component('Header', {
             navMenu.classList.remove("bg-grey");
             navMenu.classList.add("hidden");
         },
+        mouseEnter() {
+            this.$emit("ent", "ent");
+        },
+        mouseLeave() {
+            this.$emit('leav', true);
+        }
     }
 })
