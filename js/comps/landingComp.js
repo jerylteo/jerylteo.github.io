@@ -22,7 +22,7 @@ Vue.component('app-landing', {
                                             <i class="fab fa-linkedin-in fa-lg"></i>
                                         </a>
                                     </div>
-                                    <button @click="link('contact')" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10 link-animate-off">{{data.linkText}}</button>
+                                    <button @click="link('contact')" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10 text-center mx-auto link-animate-off">{{data.linkText}}</button>
                                 </div>
                             </div>
                             <div v-if="!data.largeOnly" class="h-full w-full hidden md:flex flex-col justify-center">

@@ -9,7 +9,7 @@ Vue.component('app-website', {
                         <div class="h-full w-3/4 mx-auto flex flex-col p-8" @mouseover="showDeets(index)" @mouseleave="hideDeets(index)">
                             <div class="w-full h-full max-h-3 relative">
                                 <img :src="data.image" :alt="data.title" class="h-3/4 lg:h-full w-full shadow-lg rounded-lg object-cover transition-all" :class="[popUp ? 'bg-blur' : '']">
-                                <div class="w-full absolute bottom-0 left-0 overflow-hidden z-40 transition-all flex items-center justify-center" :class="[popUp ? 'h-full' : 'h-0']">
+                                <div class="w-full absolute bottom-0 left-0 overflow-hidden z-40 transition-all hidden lg:flex items-center justify-center" :class="[popUp ? 'h-full' : 'h-0']">
                                     <div class="p-8 lg:p-10 border-4 border-turquoise flex flex-col text-center bg-black bg-opacity-50">
                                         <h1 class="text-5xl sm:text-6xl text-light">{{data.title}}</h1>
                                         <div class="w-full md:ml-0 h-1.5 bg-turquoise my-8 line-animate"></div>
@@ -19,6 +19,14 @@ Vue.component('app-website', {
                                 </div>
                             </div>
                             <a v-if="data.caption" class="text-center text-sm font-medium text-light opacity-50 mt-4">{{data.caption}}</a>
+                            <div class="w-full flex lg:hidden items-center justify-center">
+                                <div class="flex flex-col text-center">
+                                    <h1 class="text-2xl text-light">{{data.title}}</h1>
+                                    <div class="w-full md:ml-0 h-1.5 bg-turquoise my-8 line-animate"></div>
+                                    <div ref="description" v-html="data.description"></div>
+                                    <a :href="data.link" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10 link-animate-off">Check It Out <i class="fas fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
