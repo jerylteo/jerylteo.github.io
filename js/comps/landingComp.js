@@ -22,7 +22,9 @@ Vue.component('app-landing', {
                                             <i class="fab fa-linkedin-in fa-lg"></i>
                                         </a>
                                     </div>
-                                    <button @click="link('contact')" class="text-turquoise block text-lg font-medium mt-8 xl:mt-10 text-center mx-auto link-animate-off">{{data.linkText}}</button>
+                                    <div>
+                                        <button @click="link(data.link)" class="text-turquoise text-lg font-medium mt-8 xl:mt-10 text-center lg:text-left link-animate-off">{{data.linkText}}</button>
+                                    </div>
                                 </div>
                             </div>
                             <div v-if="!data.largeOnly" class="h-full w-full hidden md:flex flex-col justify-center">
@@ -78,11 +80,11 @@ Vue.component('app-landing', {
                         <p class="font-sub text-light">My name is <span class="font-sub text-turquoise font-bold">Jeryl Teo</span></p>
                         <p class="font-sub text-light mt-4">I am a Full Stack Web Developer, Swimming Instructor and Photographer</p>
                         <p class="font-sub text-light mt-4 2xl:w-2/3">Hover over the banners at the bottom to explore, or click on my navigation links for services!</p>
-                        <p class="font-sub text-light text-xs opacity-75 mt-4 2xl:w-2/3">*Only Landing Page & Contact Page is working currently.</p>
+                        <p class="font-sub text-light text-xs opacity-75 mt-4 2xl:w-2/3">*Only Landing, Website & Contact Page is working currently.</p>
                     `,
                     socialMedia: true,
                     linkText: "WORK WITH ME >",
-                    link: "/contact",
+                    link: "contact",
                     image: `<img src="./resources/images/about_me.svg" :alt="data.title" class="h-3/4 object-cover">`,
                 },
                 {
@@ -94,7 +96,7 @@ Vue.component('app-landing', {
                         <p class="font-sub text-light mt-4 2xl:w-2/3">Portfolios, Web Applications, e-Commerce ...</p>
                     `,
                     linkText: "MORE INFORMATION >",
-                    link: "/websites",
+                    link: "website",
                     image: `<img src="./resources/images/agasrevamp.png" :alt="data.title" class="w-full object-contain rounded shadow">`,
                     caption: "THE SHADES LAB",
                 },
@@ -107,7 +109,7 @@ Vue.component('app-landing', {
                         <p class="font-sub text-light mt-4 2xl:w-2/3">First to the egg, swimming till 18, teaching ever since.</p>
                     `,
                     linkText: "LEARN SWIMMING WITH ME >",
-                    link: "/swimming",
+                    link: "swimming",
                     image: `<img src="./resources/images/open-doodles-bikini.svg" :alt="data.title" class="w-2/3 object-contain">`,
                 },
                 {
@@ -119,7 +121,7 @@ Vue.component('app-landing', {
                         <p class="font-sub text-light mt-4 2xl:w-2/3">I take portraits, macros, events and more!</p>
                     `,
                     linkText: "TAKE PICTURES WITH ME >",
-                    link: "/photography",
+                    link: "photography",
                     image: `<img src="./resources/images/gal2.jpg" :alt="data.title" class="w-2/3 object-contain rounded shadow">`,
                     caption: "MINI CACTUS @ NATIONAL GALLERY, SINGAPORE",
                     largeOnly: true
