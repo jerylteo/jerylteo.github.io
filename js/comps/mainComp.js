@@ -9,6 +9,8 @@ Vue.component('app-main', {
                     <span class="animate-spin text-light order-1 md:order-2" v-html="loadingIcon" ref="loadingIconCon"></span>
                 </div>
                 <p class="font-sub text-light mt-8">Welcome to my Portfolio</p>
+                <p class="font-sub text-light mt-4">I am under maintenance</p>
+                <p class="font-sub text-light mt-4">Do come back another time</p>
             </div>
         </section>
         <Header :currentComp="currentComp" @link="changeComp" ref="header"></Header>
@@ -41,9 +43,9 @@ Vue.component('app-main', {
                 this.$refs.loadingIconCon.classList.remove("animate-spin");
                 this.loadingIcon = '<i class="fas fa-check fa-2x"></i>';
             }, 3000);
-            setTimeout(()=> {
-                this.loading = false;
-            }, 5000);
+            // setTimeout(()=> {
+            //     this.loading = false;
+            // }, 5000);
         },
         initCursor() {
             this.cursor = this.$refs.cursor;
