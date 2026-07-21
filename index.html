@@ -3,33 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeryl Teo | Landing Page</title>
-    <link rel="icon" href="resources/images/favicon.png" type="image/gif" sizes="16x16">
-    <link rel="stylesheet" href="https://use.typekit.net/ssn5yge.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://kit.fontawesome.com/18655d4787.js" crossorigin="anonymous"></script>
+    <title>Jeryl Teo — Full-Stack Developer &amp; Cyber Security Expert</title>
+    <meta name="description" content="Jeryl Teo is a full-stack developer and cybersecurity professional in Singapore with 6+ years of experience in digitalisation and AI-enabled solutions. WorldSkills Singapore Gold medallist (Web Technologies).">
+    <link rel="canonical" href="https://www.jerylteo.com/">
+    <meta name="theme-color" content="#10151b">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jerylteo.com/">
+    <meta property="og:title" content="Jeryl Teo — Full-Stack Developer & Cyber Security Expert">
+    <meta property="og:description" content="Full-stack developer and cybersecurity professional in Singapore. Digitalisation &amp; AI-enabled solutions. WorldSkills Singapore Gold medallist.">
+    <meta property="og:image" content="https://www.jerylteo.com/assets/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
     <link rel="stylesheet" href="css/styles.css">
+    <script>document.documentElement.classList.add("js");</script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jeryl Teo",
+        "url": "https://www.jerylteo.com/",
+        "jobTitle": "Full-Stack Developer & Cyber Security Expert (C4X)",
+        "email": "mailto:jerylteo@outlook.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SG",
+            "addressLocality": "Singapore"
+        },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Singapore Institute of Technology" },
+            { "@type": "CollegeOrUniversity", "name": "Nanyang Polytechnic" }
+        ],
+        "award": [
+            "Gold Medal, WorldSkills Singapore — Web Technologies (2020)",
+            "SAF Scholarship (SAS) — Cyber Security Expert (C4X) scheme"
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/jerylteo/",
+            "https://github.com/jerylteo"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <main id="app">
-        <router-view></router-view>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#top" class="brand" aria-label="Jeryl Teo — home">
+                <span class="brand-bracket">&lt;</span> JERYL TEO <span class="brand-bracket">/&gt;</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="visually-hidden">Menu</span>
+                </button>
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="top">
+            <div class="container">
+                <p class="hero-kicker reveal">Hello, my name is</p>
+                <h1 class="hero-name reveal">Jeryl Teo.</h1>
+                <p class="hero-role reveal">I turn ambiguous business needs into <span class="accent">working digital products</span>.</p>
+                <p class="hero-summary reveal">
+                    Full-stack developer and cybersecurity professional with 6+ years of experience,
+                    specialising in digitalisation and AI-enabled solutions — uncovering the root problem
+                    behind a request, then designing, building, and shipping the solution end-to-end.
+                </p>
+                <ul class="hero-badges reveal" aria-label="Highlights">
+                    <li>📍 Singapore</li>
+                    <li>🥇 WorldSkills Singapore Gold — Web Technologies</li>
+                    <li>🛡️ Cyber Security Expert (C4X)</li>
+                </ul>
+                <div class="hero-actions reveal">
+                    <a class="btn btn-primary" href="#work">See my work</a>
+                    <a class="btn btn-ghost" href="#contact">Get in touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">00.</span> About</h2>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            I'm a full-stack developer and Cyber Security Expert (C4X) with MINDEF / SAF,
+                            where I monitor and defend operational systems — and hunt down manual, repetitive
+                            workflows so I can automate them out of existence.
+                        </p>
+                        <p>
+                            Most recently I led <strong>Project Lattice</strong>, an AI-driven courseware automation and
+                            learning-analytics system submitted for the Innovation Award 2026. It cut courseware
+                            production effort by <strong>87.5%</strong> and eliminated hundreds of hours of manual
+                            analytics work per course cycle.
+                        </p>
+                        <p>
+                            Before that I built large-scale client websites at Pixelsquad and drove UI/UX
+                            improvements as a frontend developer with Rivervalley Irregulars. Away from the
+                            keyboard, I'm a certified swimming instructor and an avid photographer.
+                        </p>
+                    </div>
+                    <aside class="about-facts reveal" aria-label="Quick facts">
+                        <div class="fact">
+                            <span class="fact-value">6+</span>
+                            <span class="fact-label">years of experience</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-value">-87.5%</span>
+                            <span class="fact-label">courseware production effort, Project Lattice</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-value">S$140K+</span>
+                            <span class="fact-label">estimated cost eliminated per course cycle</span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EXPERIENCE ============ -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">01.</span> Experience</h2>
+                <ol class="timeline">
+                    <li class="timeline-item reveal">
+                        <div class="timeline-meta">2021 — Present</div>
+                        <h3 class="timeline-role">Cyber Security Expert (C4X)</h3>
+                        <p class="timeline-org">MINDEF / SAF — SAF Scholarship (SAS) recipient</p>
+                        <ul class="timeline-points">
+                            <li>Monitor and defend operational systems: security monitoring, malware analysis, incident response, and penetration testing across MINDEF systems.</li>
+                            <li>Drive internal digitalisation by identifying manual, repetitive workflows and building automation to eliminate them.</li>
+                        </ul>
+                        <div class="timeline-sub">
+                            <h4 class="timeline-subrole">Project Lattice — Project Lead, JIC <span class="tag">Innovation Award 2026 submission</span></h4>
+                            <ul class="timeline-points">
+                                <li>Led and developed an integrated system that automates creation of courseware — quizzes, flashcards, mind maps, and acronym tables — from raw learning sources such as textbooks and PDFs.</li>
+                                <li>Cut courseware production effort from 2,400 to 300 hours per cycle (−87.5%), reducing cost from S$135,312 to S$16,914.</li>
+                                <li>Automated live AI insights and analytics at course, per-quiz, and per-learner level — eliminating 390 hours of manual analytics work per cycle.</li>
+                                <li>Added automated similarity checks against past papers to protect assessment integrity, plus automated end-of-course and learner evaluation reports.</li>
+                                <li>Built with React, Node.js, and Moodle plugins (PHP); deployed on AWS and on-premise infrastructure.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="timeline-item reveal">
+                        <div class="timeline-meta">May 2025 — Apr 2026</div>
+                        <h3 class="timeline-role">Frontend Web Developer</h3>
+                        <p class="timeline-org">Rivervalley Irregulars — Singapore</p>
+                        <ul class="timeline-points">
+                            <li>Drove significant improvements to the website's UI/UX, leading research into a more intuitive and efficient user journey.</li>
+                            <li>Developed innovative tools that empower partnering organisations, fostering stronger collaboration.</li>
+                            <li>Managed critical relationships with external vendors to deliver project objectives.</li>
+                        </ul>
+                    </li>
+                    <li class="timeline-item reveal">
+                        <div class="timeline-meta">2020 — 2021</div>
+                        <h3 class="timeline-role">Full-Stack Web Developer</h3>
+                        <p class="timeline-org">Pixelsquad Pte Ltd — Singapore</p>
+                        <ul class="timeline-points">
+                            <li>Developed front- and back-end of large-scale client websites using Laravel, Vue.js, Inertia.js, Blade, PHP, and WordPress — including agas.org.sg and theshadeslab.com.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ============ WORK ============ -->
+        <section class="section" id="work">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">02.</span> Selected Work</h2>
+
+                <article class="feature-card reveal">
+                    <div class="feature-body">
+                        <p class="feature-kicker">Featured · Innovation Award 2026 submission</p>
+                        <h3 class="feature-title">Project Lattice</h3>
+                        <p class="feature-desc">
+                            An AI-driven system that turns raw learning sources — textbooks, PDFs — into finished
+                            courseware: quizzes, flashcards, mind maps, and acronym tables. Live AI analytics at
+                            course, quiz, and learner level, with automated similarity checks to protect
+                            assessment integrity.
+                        </p>
+                        <dl class="feature-stats">
+                            <div><dt>Production effort</dt><dd>2,400 → 300 hrs / cycle</dd></div>
+                            <div><dt>Production cost</dt><dd>S$135K → S$17K / cycle</dd></div>
+                            <div><dt>Manual analytics</dt><dd>390 hrs → 0</dd></div>
+                        </dl>
+                        <ul class="tech-list" aria-label="Technologies">
+                            <li>React</li><li>Node.js</li><li>Moodle (PHP)</li><li>AWS</li><li>On-premise</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="project-grid">
+                    <article class="project-card reveal">
+                        <a class="project-link" href="https://theshadeslab.com" rel="noopener">
+                            <img src="assets/theshadeslab.webp" alt="Screenshot of the TheShadesLab website" loading="lazy" width="1400" height="787">
+                            <div class="project-body">
+                                <h3>TheShadesLab</h3>
+                                <p>Product website built during my time at Pixelsquad.</p>
+                                <ul class="tech-list"><li>Laravel Nova</li><li>Vue.js</li><li>Inertia.js</li></ul>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="project-card reveal">
+                        <a class="project-link" href="https://agas.org.sg" rel="noopener">
+                            <img src="assets/agasrevamp.webp" alt="Screenshot of the Art Galleries Association of Singapore website" loading="lazy" width="1400" height="787">
+                            <div class="project-body">
+                                <h3>AGAS Revamp</h3>
+                                <p>Gallery website for the Art Galleries Association of Singapore.</p>
+                                <ul class="tech-list"><li>WordPress</li><li>Vue.js</li></ul>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="project-card reveal">
+                        <a class="project-link" href="https://alienspacecrab.com" rel="noopener">
+                            <img src="assets/alienspacecrab.webp" alt="Screenshot of the Alien Space Crab website" loading="lazy" width="1400" height="787">
+                            <div class="project-body">
+                                <h3>Alien Space Crab</h3>
+                                <p>Product website for the Alien Space Crab team.</p>
+                                <ul class="tech-list"><li>Squarespace</li></ul>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="project-card reveal">
+                        <a class="project-link" href="http://swimbright.sg" rel="noopener">
+                            <img src="assets/swimbright.webp" alt="Screenshot of the SwimBright website" loading="lazy" width="1400" height="781">
+                            <div class="project-body">
+                                <h3>SwimBright</h3>
+                                <p>Advertising website for a freelance swim school, built as a freelancer.</p>
+                                <ul class="tech-list"><li>WordPress</li><li>Vue.js</li></ul>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SKILLS ============ -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">03.</span> Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <h3>Development</h3>
+                        <ul class="tech-list">
+                            <li>React</li><li>Node.js</li><li>PHP · Laravel</li><li>Moodle plugins</li>
+                            <li>Vue.js · Inertia.js</li><li>HTML/CSS</li><li>SQL</li><li>REST APIs</li>
+                            <li>AWS &amp; on-premise deployment</li><li>WordPress</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Digitalisation &amp; Delivery</h3>
+                        <ul class="tech-list">
+                            <li>Requirements &amp; root-cause analysis</li><li>Workflow automation</li>
+                            <li>AI content generation</li><li>Learning analytics</li><li>End-to-end delivery</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Cybersecurity</h3>
+                        <ul class="tech-list">
+                            <li>Incident response</li><li>Malware analysis</li>
+                            <li>Penetration testing</li><li>Security monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EDUCATION & AWARDS ============ -->
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">04.</span> Education &amp; Awards</h2>
+                <div class="edu-grid">
+                    <div class="edu-col reveal">
+                        <h3 class="subheading">Education</h3>
+                        <div class="edu-item">
+                            <div class="timeline-meta">2022 — 2026</div>
+                            <h4>BSc (Hons) Computer Science in Interactive Media and Game Development</h4>
+                            <p class="timeline-org">Singapore Institute of Technology, joint programme with DigiPen Institute of Technology Singapore</p>
+                            <p class="edu-note">Wellness Champion awardee · President of Peer Supporters, WellThy Minds Project, and Calisthenics · Student Ambassador</p>
+                        </div>
+                        <div class="edu-item">
+                            <div class="timeline-meta">2018 — 2021</div>
+                            <h4>Diploma in Multimedia and Infocomm Technology</h4>
+                            <p class="timeline-org">Nanyang Polytechnic, School of Engineering</p>
+                            <p class="edu-note">Director's List in 4 semesters · 5 distinctions and 14 As across modules</p>
+                        </div>
+                    </div>
+                    <div class="edu-col reveal">
+                        <h3 class="subheading">Awards &amp; Recognition</h3>
+                        <ul class="award-list">
+                            <li>
+                                <strong>Gold Medal, WorldSkills Singapore — Web Technologies (2020)</strong>
+                                <span>Competed against polytechnic and university teams nationwide.</span>
+                            </li>
+                            <li>
+                                <strong>Innovation Award 2026 submission — Project Lattice</strong>
+                                <span>MINDEF-wide innovation award submission for AI-driven courseware automation.</span>
+                            </li>
+                            <li>
+                                <strong>SAF Scholarship (SAS)</strong>
+                                <span>Cyber Security Expert (C4X) scheme.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section section-contact" id="contact">
+            <div class="container">
+                <h2 class="section-title reveal"><span aria-hidden="true">05.</span> Contact</h2>
+                <div class="contact-inner reveal">
+                    <p class="contact-lead">
+                        Have a project, a stubborn manual workflow, or a role in mind?
+                        My inbox is always open — I'll get back to you as soon as I can.
+                    </p>
+                    <a class="btn btn-primary btn-lg" href="mailto:jerylteo@outlook.com">Say hello</a>
+                    <ul class="contact-links" aria-label="Profiles">
+                        <li>
+                            <a href="https://www.linkedin.com/in/jerylteo/" rel="noopener">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jerylteo" rel="noopener">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.9 5.7-5.6 6 .5.4.9 1.2.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:jerylteo@outlook.com">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7L22 7"/></svg>
+                                jerylteo@outlook.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Designed &amp; built by Jeryl Teo · <span id="year">2026</span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-<script src="https://unpkg.com/vue-router@3.5.1/dist/vue-router.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-
-<script src="js/comps/headerComp.js"></script>
-<script src="js/comps/mainComp.js"></script>
-<script src="js/comps/landingComp.js"></script>
-<script src="js/comps/contactComp.js"></script>
-<script src="js/comps/websiteComp.js"></script>
-<script src="js/comps/swimmingComp.js"></script>
-<script src="js/comps/photographyComp.js"></script>
-
-<script src="js/routes.js"></script>
-<script src="js/app.js"></script>
 </html>
