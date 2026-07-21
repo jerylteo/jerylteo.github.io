@@ -573,36 +573,6 @@ ul, ol {
     color: var(--accent-text);
 }
 
-.timeline-sub {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.timeline-subrole {
-    font-size: 1.1rem;
-    margin-bottom: 0.85rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.tag {
-    font-size: 0.72rem;
-    font-weight: 600;
-    font-family: var(--font-mono);
-    color: var(--accent-text);
-    background: var(--accent-soft);
-    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    white-space: nowrap;
-}
-
 /* ---------- Work ---------- */
 
 .feature-card {
