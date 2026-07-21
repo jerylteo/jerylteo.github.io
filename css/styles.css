@@ -1,6 +1,5 @@
 /* ==========================================================================
-   jerylteo.com — hand-rolled, dependency-free stylesheet
-   Dark-first (brand), light theme via prefers-color-scheme or data-theme.
+   jerylteo.com stylesheet: hand-rolled, dependency-free, dark theme
    ========================================================================== */
 
 :root {
@@ -23,38 +22,6 @@
     --radius: 0.75rem;
 
     color-scheme: dark;
-}
-
-@media (prefers-color-scheme: light) {
-    :root:not([data-theme="dark"]) {
-        --bg: #f7f9fa;
-        --bg-raised: #ffffff;
-        --bg-card: #ffffff;
-        --border: #dbe2e8;
-        --text: #2b3540;
-        --text-muted: #5b6a78;
-        --heading: #16202a;
-        --accent: #00adb5;
-        --accent-text: #00727a;
-        --accent-soft: rgba(0, 173, 181, 0.1);
-        --shadow: 0 12px 32px rgba(22, 32, 42, 0.1);
-        color-scheme: light;
-    }
-}
-
-:root[data-theme="light"] {
-    --bg: #f7f9fa;
-    --bg-raised: #ffffff;
-    --bg-card: #ffffff;
-    --border: #dbe2e8;
-    --text: #2b3540;
-    --text-muted: #5b6a78;
-    --heading: #16202a;
-    --accent: #00adb5;
-    --accent-text: #00727a;
-    --accent-soft: rgba(0, 173, 181, 0.1);
-    --shadow: 0 12px 32px rgba(22, 32, 42, 0.1);
-    color-scheme: light;
 }
 
 /* ---------- Reset ---------- */
