@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover + the safe-area padding in index.css is what keeps the
+         layout clear of the iPhone notch and home indicator once installed. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>RunLab</title>
+    <meta name="description" content="Running and strength, planned together and explained." />
+
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+
+    <!-- iOS reads these, not the manifest, when adding to the home screen. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="RunLab" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- Dark is the theme; P2a ships no light toggle in Phase 2. -->
+    <meta name="theme-color" content="#121110" />
+
+    <!-- Personal, single-user, and the Garmin integration is not publicised. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="module" crossorigin src="/runlab/assets/index-DFRFltxN.js"></script>
+    <link rel="stylesheet" crossorigin href="/runlab/assets/index-cqdXGXRV.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
