@@ -16,14 +16,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="RunLab" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!-- `black`, NOT `black-translucent`. Translucent lets the page run UNDER the
+         status bar, and iOS paints a scrim there that fades out over the content
+         below it rather than stopping at `safe-area-inset-top` — so the first
+         element on every screen sat inside the fade. Padding it clear was a guess
+         at the fade depth and only half-worked. `black` makes iOS start the web
+         view BELOW the status bar, so there is no scrim over the page at all. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- Dark is the theme; P2a ships no light toggle in Phase 2. -->
     <meta name="theme-color" content="#121110" />
 
     <!-- Personal, single-user, and the Garmin integration is not publicised. -->
     <meta name="robots" content="noindex, nofollow" />
-    <script type="module" crossorigin src="/runlab/assets/index-DcG7r7Mw.js"></script>
-    <link rel="stylesheet" crossorigin href="/runlab/assets/index-DEp8OhqW.css">
+    <script type="module" crossorigin src="/runlab/assets/index-CRjI7Lp2.js"></script>
+    <link rel="stylesheet" crossorigin href="/runlab/assets/index-AoZ5yL5C.css">
   </head>
   <body>
     <div id="root"></div>
